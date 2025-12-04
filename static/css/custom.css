@@ -1,0 +1,148 @@
+/* Custom Styles for Kapdaa Redesign */
+
+:root {
+    --primary-color: #0062cc;
+    /* Deep Blue */
+    --secondary-color: #ff6600;
+    /* Vibrant Orange */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --border-color: #e4e4e4;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background-color: #f4f6f8;
+}
+
+/* Navbar Redesign */
+.section-header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-main {
+    background-color: var(--primary-color);
+}
+
+.navbar-main .nav-link {
+    color: #fff !important;
+}
+
+.header-main {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* Search Bar */
+.search .form-control {
+    border-radius: 5px 0 0 5px;
+    border-color: var(--border-color);
+}
+
+.search .btn {
+    border-radius: 0 5px 5px 0;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: #fff;
+    width: 50px;
+}
+
+.search .btn:hover {
+    background-color: #e65c00;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0050a6;
+    border-color: #0050a6;
+    transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Product Cards */
+.card-product-grid {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card-product-grid:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-product-grid .img-wrap {
+    border-radius: 8px 8px 0 0;
+    padding: 15px;
+}
+
+.card-product-grid .info-wrap {
+    padding: 15px;
+}
+
+.card-product-grid .title {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.card-product-grid .price {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+/* Footer */
+.section-footer {
+    background-color: #fff;
+    color: #555;
+    padding-top: 40px;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Category Dropdown */
+.category-wrap .btn {
+    background-color: #fff;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+.category-wrap .btn:hover {
+    background-color: var(--light-bg);
+}
+
+/* Widget Header (Cart/User) */
+.widget-header .icon {
+    color: var(--primary-color);
+    border-color: var(--border-color);
+}
+
+.widget-header .notify {
+    background-color: var(--secondary-color);
+}
