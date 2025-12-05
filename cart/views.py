@@ -21,7 +21,7 @@ def add_cart(request, product_id):
     
     try:
         cart_item=CartItem.objects.get(product=product, cart=cart)
-        cart_item.quantity += 1
+        cart_item.quantity += 1 # increase the quantity
         cart_item.save()
     except CartItem.DoesNotExist:
         cart_item=CartItem.objects.create(
@@ -35,5 +35,30 @@ def add_cart(request, product_id):
     exit()
     return redirect('cart')
 
-def cart(request):
-    return render(request, 'store/cart.html')
+def cart(request, total=0, quantity=0, cart_items=None):
+    try:
+        cart = Cart.objects.get(cart_id=_cart_id(request))
+    # except Cart.DoesNotExist:
+    #     cart = Cart.objects.create(
+    #         cart_id=_cart_id(request)
+    #         )
+    # cart.save()
+    
+    # try:
+        cart_items = CartItem.objects.filter(cart=cart, is_active=True)
+        for cart_item in cart_items:
+            total += (cart_item.product.price * cart_item.quantity)
+            quantity += cart_item.quantity
+    # except CartItem.DoesNotExist:
+    #     cart_items = None
+
+    except ObjectDoesNotExist:
+        pass # just ignore
+
+    context = {
+        'total': total,
+        'quantity': quantity,
+        'cart_items': cart_items,
+    }
+    
+    return render(request, 'store/cart.html', context)
