@@ -31,3 +31,15 @@ def store(request, category_slug=None):
 
     # Render and return the store page
     return render(request, "store/store.html", context)
+
+def product_detail(request, category_slug, product_slug):
+    try:
+        single_product = Product.objects.get(category__slug=category_slug, slug=product_slug) # category__slug means we are filtering by category slug from Product model
+    except Exception as e:
+        raise e
+    
+    context = {
+        'single_product': single_product,
+    }
+    
+    return render(request, "store/product_detail.html", context)
